@@ -44,7 +44,7 @@ async function searchPerson(formData: FormData) {
       error instanceof Error ? error.message : "接口请求遇到未知异常。";
 
     if (errorMessage === "PERSON_QUERY_TIMEOUT") {
-      return { error: "接口请求被限定在4秒内, 当前已超时" };
+      return { error: "当前请求超时, 服务器可能正在维护, 这需要一点时间" };
     }
 
     if (errorMessage.includes("422")) {
